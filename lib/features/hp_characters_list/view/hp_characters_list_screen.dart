@@ -29,6 +29,7 @@ class _HpCharactersListScreenState extends State<HpCharactersListScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Harry Poter'),
+       
       ),
       body: RefreshIndicator(
         onRefresh: () async {
@@ -40,13 +41,14 @@ class _HpCharactersListScreenState extends State<HpCharactersListScreen> {
             bloc: _hpCharactersListBloc,
             builder: (context, state) {
               if (state is HpCharactersListLoaded) {
-                return ListView.separated(
-                  padding: const EdgeInsets.only(top: 16),
+                return ListView.builder(
                   itemCount: state.hpCharactersList.length,
-                  separatorBuilder: (context, index) => const Divider(),
                   itemBuilder: (context, i) {
                     final characterName = state.hpCharactersList[i];
-                    return HpCharactersTile(characterName: characterName);
+                    return Padding(
+                      padding: const EdgeInsets.only(top: 15 ,bottom: 1, left: 16,right: 16),
+                      child: HpCharactersTile(characterName: characterName),
+                    );
                   },
                 );
               }

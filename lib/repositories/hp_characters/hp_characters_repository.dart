@@ -17,6 +17,8 @@ class HpCharactersRepository implements AbstractHpCharactersRepository {
         gender: e['gender'],
         house: e['house'],
         image: e['image'],
+        species: e['species'],
+        alive: e['alive'],
       );
     }).toList();
     return characterList;

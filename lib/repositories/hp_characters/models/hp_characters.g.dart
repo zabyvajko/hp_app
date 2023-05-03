@@ -11,6 +11,8 @@ HpCharacters _$HpCharactersFromJson(Map<String, dynamic> json) => HpCharacters(
       gender: json['gender'] as String,
       house: json['house'] as String,
       image: json['image'] as String,
+      species: json['species'] as String,
+      alive: json['alive'] as bool,
     );
 
 Map<String, dynamic> _$HpCharactersToJson(HpCharacters instance) =>
@@ -19,4 +21,6 @@ Map<String, dynamic> _$HpCharactersToJson(HpCharacters instance) =>
       'gender': instance.gender,
       'house': instance.house,
       'image': instance.image,
+      'species': instance.species,
+      'alive': instance.alive,
     };
